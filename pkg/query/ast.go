@@ -124,6 +124,7 @@ type QueryContext struct {
 	Graph      interface{} // Reference to graph storage
 	Variables  map[string]interface{}
 	ResultRows []Row
+	Matches    []BindingTable // Intermediate matches
 }
 
 // NewQuery creates a new query
@@ -180,19 +181,9 @@ type ScanOperator struct {
 	Label    string // Optional
 }
 
-func (s *ScanOperator) Execute(ctx *QueryContext) error {
-	// Implementation in executor
-	return nil
-}
-
 // FilterOperator applies WHERE predicates
 type FilterOperator struct {
 	Predicate Expression
-}
-
-func (f *FilterOperator) Execute(ctx *QueryContext) error {
-	// Implementation in executor
-	return nil
 }
 
 // ExpandOperator traverses from nodes to neighbors
@@ -206,27 +197,12 @@ type ExpandOperator struct {
 	MaxHops   int
 }
 
-func (e *ExpandOperator) Execute(ctx *QueryContext) error {
-	// Implementation in executor
-	return nil
-}
-
 // ProjectOperator extracts RETURN values
 type ProjectOperator struct {
 	Items []ReturnItem
 }
 
-func (p *ProjectOperator) Execute(ctx *QueryContext) error {
-	// Implementation in executor
-	return nil
-}
-
 // LimitOperator limits result count
 type LimitOperator struct {
 	Count int
-}
-
-func (l *LimitOperator) Execute(ctx *QueryContext) error {
-	// Implementation in executor
-	return nil
 }

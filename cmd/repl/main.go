@@ -15,9 +15,8 @@ const banner = `
 `
 
 func main() {
-	fmt.Println(banner)
+	fmt.Print(banner)
 	fmt.Println("Type 'help' for available commands, 'exit' to quit")
-	fmt.Println()
 
 	reader := bufio.NewReader(os.Stdin)
 

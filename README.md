@@ -4,14 +4,14 @@ A production-grade, distributed graph database built from scratch in Go, designe
 
 ## Features
 
-- 🚀 **High Performance**: Millions of operations per second through sharding and parallelization
-- 🔒 **Strong Consistency**: Raft consensus for linearizable reads and writes
-- 🌐 **Distributed Architecture**: Horizontal scalability with data partitioning
-- 🔄 **High Availability**: Multi-replica deployment with automatic failover
-- 📊 **SQL-like Query Language**: Familiar syntax with graph pattern matching
-- 🧮 **Built-in Algorithms**: BFS, DFS, shortest path, PageRank, and more
-- 📡 **Real-time Streaming**: Native support for continuous data ingestion
-- 💻 **Interactive REPL**: Command-line interface for queries and administration
+- **High Performance**: Millions of operations per second through sharding and parallelization
+- **Strong Consistency**: Raft consensus for linearizable reads and writes
+- **Distributed Architecture**: Horizontal scalability with data partitioning
+- **High Availability**: Multi-replica deployment with automatic failover
+- **SQL-like Query Language**: Familiar syntax with graph pattern matching
+- **Built-in Algorithms**: BFS, DFS, shortest path, PageRank, and more
+- **Real-time Streaming**: Native support for continuous data ingestion
+- **Interactive REPL**: Command-line interface for queries and administration
 
 ## Architecture
 
@@ -30,7 +30,7 @@ rdgDB is a **CP system** (Consistent and Partition-tolerant) in CAP terms:
 
 ## Project Status
 
-🚧 **Under Active Development** 🚧
+**Under Active Development**
 
 Current phase: **Phase 0 - Project Foundation**
 

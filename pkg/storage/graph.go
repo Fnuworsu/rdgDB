@@ -273,3 +273,28 @@ func (g *Graph) removeInEdge(node *graph.Node, edgeID graph.EdgeID) {
 		}
 	}
 }
+
+// IterateNodes iterates over all nodes in the graph and calls the callback
+// If callback returns false, iteration stops
+func (g *Graph) IterateNodes(callback func(*graph.Node) bool) {
+	g.nodesMu.RLock()
+	// Create a snapshot of values to avoid holding lock during callback
+	// or just hold read lock? Holding read lock is risky if callback does writes.
+	// For safety, let's collect nodes first. For large graphs this is bad.
+	// Better: hold lock, but document that callback must not modify graph structure.
+	// Actually, RWMutex allows concurrent reads.
+	// If we want to be safe against deadlocks if callback calls other graph methods:
+	// The safest is to copy keys or values.
+	// Let's copy values for now (slice of pointers).
+	nodes := make([]*graph.Node, 0, len(g.nodes))
+	for _, node := range g.nodes {
+		nodes = append(nodes, node)
+	}
+	g.nodesMu.RUnlock()
+
+	for _, node := range nodes {
+		if !callback(node) {
+			break
+		}
+	}
+}

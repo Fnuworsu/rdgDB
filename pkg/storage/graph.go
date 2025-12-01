@@ -45,10 +45,8 @@ func (g *Graph) AddNode(label string, properties graph.Properties) (*graph.Node,
 	nodeID := graph.NodeID(g.nextNodeID.Add(1) - 1)
 
 	node := graph.NewNode(nodeID, label)
-	if properties != nil {
-		for k, v := range properties {
-			node.SetProperty(k, v)
-		}
+	for k, v := range properties {
+		node.SetProperty(k, v)
 	}
 
 	g.nodesMu.Lock()
@@ -87,10 +85,8 @@ func (g *Graph) AddEdge(source, target graph.NodeID, label string, properties gr
 	edgeID := graph.EdgeID(g.nextEdgeID.Add(1) - 1)
 	edge := graph.NewEdge(edgeID, source, target, label)
 
-	if properties != nil {
-		for k, v := range properties {
-			edge.SetProperty(k, v)
-		}
+	for k, v := range properties {
+		edge.SetProperty(k, v)
 	}
 
 	// Store edge

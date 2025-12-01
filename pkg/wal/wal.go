@@ -17,12 +17,10 @@ import (
 type OpType string
 
 const (
-	OpAddNode     OpType = "ADD_NODE"
-	OpAddEdge     OpType = "ADD_EDGE"
-	OpDeleteNode  OpType = "DELETE_NODE"
-	OpDeleteEdge  OpType = "DELETE_EDGE"
-	OpSetNodeProp OpType = "SET_NODE_PROP"
-	OpSetEdgeProp OpType = "SET_EDGE_PROP"
+	OpAddNode    OpType = "ADD_NODE"
+	OpAddEdge    OpType = "ADD_EDGE"
+	OpDeleteNode OpType = "DELETE_NODE"
+	OpDeleteEdge OpType = "DELETE_EDGE"
 )
 
 // LogEntry represents a single entry in the WAL

@@ -11,11 +11,7 @@ import (
 	"github.com/fnuworsu/rdgDB/pkg/storage"
 )
 
-const (
-	defaultDataDir     = "./data"
-	defaultWALDir      = "./data/wal"
-	defaultSnapshotDir = "./data/snapshots"
-)
+const defaultDataDir = "./data"
 
 func main() {
 	fmt.Println("rdgDB Server - Real-Time Distributed Graph Database")
